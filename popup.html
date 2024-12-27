@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="theme.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="search-bar">
+        <input type="text" id="searchInput" placeholder="搜索书签...">
+        <button id="clearSearchBtn" class="clear-search-btn">×</button>
+      </div>
+      <div class="header-actions">
+        <button id="themeToggleBtn" class="theme-toggle-btn" aria-label="切换主题">
+          <span class="theme-icon">☀️</span>
+        </button>
+        <button id="settingsBtn" class="settings-btn">⚙️</button>
+      </div>
+    </div>
+    
+    <div class="bookmark-categories">
+      <div class="category-header">
+        <h3>分类管理</h3>
+        <div class="header-buttons">
+          <button id="batchModeBtn" class="batch-mode-btn" style="height: 32px;">批量操作</button>
+          <button id="addCategoryBtn" class="add-category-btn" style="height: 32px;">添加分类</button>
+          <button id="manageCategoriesBtn" class="manage-btn" style="height: 32px;">管理分类</button>
+        </div>
+      </div>
+      <ul class="category-list">
+        <!-- 分类列表将在这里动态生成 -->
+      </ul>
+    </div>
+    
+    <!-- 添加批量操作工具栏 -->
+    <div id="batchToolbar" class="batch-toolbar">
+      <div class="batch-info">
+        已选择 <span id="selectedCount">0</span> 项
+      </div>
+      <div class="batch-actions">
+        <select id="batchCategorySelect">
+          <option value="">设置分类...</option>
+        </select>
+        <button id="batchDeleteBtn" class="batch-delete-btn">删除</button>
+        <button id="cancelBatchBtn" class="cancel-batch-btn">取消</button>
+      </div>
+    </div>
+    
+    <div class="bookmark-list">
+      <!-- 书签列表将在这里动态生成 -->
+    </div>
+  </div>
+  
+  <!-- 分类设置弹窗 -->
+  <div id="categoryModal" class="modal">
+    <div class="modal-content">
+      <h3>设置分类</h3>
+      <select id="categorySelect">
+        <!-- 分类选项将在这里动态生成 -->
+      </select>
+      <div class="modal-buttons">
+        <button id="saveCategoryBtn">保存</button>
+        <button id="cancelCategoryBtn">取消</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 分类管理弹窗 -->
+  <div id="categoryManageModal" class="modal">
+    <div class="modal-content">
+      <h3>分类管理</h3>
+      <div class="category-manage-list">
+        <!-- 分类管理列表将在这里动态生成 -->
+      </div>
+      <div class="modal-buttons">
+        <button id="closeManageBtn">关闭</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- 设置面板 -->
+  <div id="settingsPanel" class="settings-panel">
+    <div class="settings-content">
+      <h3>设置</h3>
+      <div class="settings-section">
+        <h4>主题</h4>
+        <select id="themeSelect">
+          <option value="light">浅色</option>
+          <option value="dark">深色</option>
+          <option value="system">跟随系统</option>
+        </select>
+      </div>
+      <div class="settings-section">
+        <h4>每页显示书签数</h4>
+        <select id="pageSizeSelect">
+          <option value="10">10</option>
+          <option value="20">20</option>
+          <option value="50">50</option>
+          <option value="100">100</option>
+        </select>
+      </div>
+      <div class="settings-section">
+        <h4>数据管理</h4>
+        <div class="data-management">
+          <button id="exportDataBtn" class="data-btn">导出数据</button>
+          <button id="importDataBtn" class="data-btn">导入数据</button>
+          <input type="file" id="importFile" accept=".json" style="display: none;">
+        </div>
+        <p class="data-tip">导出数据包含所有分类和书签分类信息</p>
+      </div>
+      <div class="settings-buttons">
+        <button id="closeSettingsBtn">关闭</button>
+      </div>
+    </div>
+  </div>
+  
+  <script src="popup.js"></script>
+</body>
+</html> 

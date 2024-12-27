@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "Chrome书签分类插件",
+  "version": "1.0",
+  "description": "一个帮助分类管理Chrome书签的插件",
+  "permissions": [
+    "bookmarks",
+    "storage",
+    "tabs"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "48": "images/icon_48.png"
+ 
+    }
+  },
+  "icons": {
+    "48": "images/icon_48.png"
+  }
+} 

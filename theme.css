@@ -1,0 +1,48 @@
+:root {
+  /* 默认主题颜色 */
+  --primary-color: #2196F3;
+  --primary-hover: #1976D2;
+  --secondary-color: #4CAF50;
+  --secondary-hover: #45a049;
+  --danger-color: #f44336;
+  --danger-hover: #d32f2f;
+  --background-color: #ffffff;
+  --surface-color: #f8f9fa;
+  --border-color: #dee2e6;
+  --text-primary: #212121;
+  --text-secondary: #666666;
+}
+
+/* 暗色主题 */
+[data-theme="dark"] {
+  --primary-color: #64B5F6;
+  --primary-hover: #42A5F5;
+  --secondary-color: #81C784;
+  --secondary-hover: #66BB6A;
+  --danger-color: #E57373;
+  --danger-hover: #EF5350;
+  --background-color: #121212;
+  --surface-color: #1E1E1E;
+  --border-color: #333333;
+  --text-primary: #FFFFFF;
+  --text-secondary: #B0B0B0;
+}
+
+/* 动画效果 */
+.fade-in {
+  animation: fadeIn 0.3s ease-in;
+}
+
+.slide-in {
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideIn {
+  from { transform: translateY(-10px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+} 
